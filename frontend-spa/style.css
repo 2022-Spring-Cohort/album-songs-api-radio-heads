@@ -1,0 +1,15 @@
+.Albums {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+.albumArt {
+    display: flex;
+  
+    max-width: 200px;
+    height: 200px;
+    
+    
+}
