@@ -1,15 +1,18 @@
 .Albums {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     
 }
 
 
 .albumArt {
     display: flex;
-  
+    flex-direction: column;
     max-width: 200px;
     height: 200px;
+    padding: 2em;
+    margin-top: 3em;
     
     
 }
