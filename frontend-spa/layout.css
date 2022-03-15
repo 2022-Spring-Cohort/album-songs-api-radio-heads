@@ -26,9 +26,9 @@ header {
     flex-direction: row;
     max-width: 200px;
     height: 200px;
-    padding: 2em;
+    padding: 1rem;
     justify-content: space-evenly;
-    margin-top: .5rem;
+    margin-top: .5em;
     border-radius: 25px;
     
    
