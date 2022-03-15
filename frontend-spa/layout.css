@@ -10,13 +10,16 @@
 .logo {
     margin-left: 60px;
     height: 200px;
-    margin-top: 20px;
+    
 }
 header { 
     display: flex;
     flex-direction: row;
     border-radius: 25px;
     margin-top: 25px;
+    height: 200px;
+    align-items: center;
+    text-decoration: underline;
     
 }
 
@@ -31,10 +34,15 @@ header {
     margin-top: .5em;
     border-radius: 25px;
     
+}
+
+    
+
+
    
    
   
     
     
     
-}
+

@@ -12,6 +12,22 @@ header {
 .albumArt{
     background-color: #F46161;
 }
+
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999;
+    transform: scale(2.5);
+    padding: 40px;
+    transition: transform .2s;
+    margin-left: 1em;
+
+
+
+}
 /* #FDD5C0 light salmon
 #FB8289 pink
 #F46161 red/pink
