@@ -1,18 +1,19 @@
-.Albums {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
+body {
+    background-color: #FFCF62;
+}
+h1{
+    font-size: 98px;
+}
+header {
+    background-color:#F9912B ;
 }
 
-
-.albumArt {
-    display: flex;
-    flex-direction: column;
-    max-width: 200px;
-    height: 200px;
-    padding: 2em;
-    margin-top: 3em;
-    
-    
+   
+.albumArt{
+    background-color: #F46161;
 }
+/* #FDD5C0 light salmon
+#FB8289 pink
+#F46161 red/pink
+#F9912B orange
+#FFCF62  yellow */
