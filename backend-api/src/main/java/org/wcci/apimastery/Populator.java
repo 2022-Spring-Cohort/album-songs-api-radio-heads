@@ -23,7 +23,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Album album1 = new Album("Purgatory", "https://www.childersImage.com", "Tyler Childers");
+        Album album1 = new Album("Purgatory", "./frontend-spa/AlbumCovers/tyler_childers_-_purgatory.png", "Tyler Childers");
         albumRepo.save(album1);
         Song song1 = new Song("Feathered Indians", "3:49", "Tyler Childers", album1);
         songRepo.save(song1);
