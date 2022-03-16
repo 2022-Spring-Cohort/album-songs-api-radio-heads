@@ -10,23 +10,21 @@ public class Album {
     private Long id;
     private String title;
     private String image;
-
-    @ManyToOne
-    private Artist artist;
+    private String artist;
 
     @OneToMany(mappedBy = "album")
     private Collection<Song> songs;
 
-    @ManyToMany
-    private Collection<Comments>comments;
+    @OneToMany(mappedBy = "album")
+    private Collection<Comment>comments;
 
     public Album() {
     }
 
-    public Album(Long id, String title, String image) {
-        this.id = id;
+    public Album(String title, String image, String artist) {
         this.title = title;
         this.image = image;
+        this.artist = artist;
     }
 
     public Long getId() {
@@ -39,6 +37,18 @@ public class Album {
 
     public String getImage() {
         return image;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public Collection<Song> getSongs() {
+        return songs;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
     }
 }
 
