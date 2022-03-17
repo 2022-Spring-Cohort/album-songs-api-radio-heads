@@ -43,7 +43,7 @@ public class Populator implements CommandLineRunner {
         commentRepo.save(comment2);
 
         
-        Album album3 = new Album("A Beautiful Lie", "/AlbumCovers/a_beautiful_lie.jpg", "Thirty Seconds To Mars");
+        Album album3 = new Album("A Beautiful Lie", "/AlbumCovers/a_beautiful_lie.jpg", "30 Seconds To Mars");
         albumRepo.save(album3);
         Song song5 = new Song("The Kill", "3:51", "Thirty Seconds To Mars", album3);
         songRepo.save(song5);
