@@ -9,9 +9,9 @@ header {
 }
 
    
-.albumArt{
+/* .albumArt{
     background-color: #F46161;
-}
+} */
 
 .thumbnail:hover {
     position:relative;
@@ -24,10 +24,14 @@ header {
     padding: 40px;
     transition: transform .2s;
     margin-left: 1em;
-
-
-
 }
+
+.title {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:normal
+}
+
+
 /* #FDD5C0 light salmon
 #FB8289 pink
 #F46161 red/pink
