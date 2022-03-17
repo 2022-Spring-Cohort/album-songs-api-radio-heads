@@ -4,7 +4,6 @@
     flex-wrap: wrap;
     border-radius: 95px;
     justify-content: space-evenly;
-    margin-top: 3%;
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
@@ -13,6 +12,7 @@
 .logo {  
 
 }
+
 header { 
     display: flex;
     flex-direction: row;
@@ -27,14 +27,16 @@ header {
 
 .albumArt {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     max-width: 200px;
-    height: 200px;
-    padding: 1rem;
     justify-content: space-evenly;
     margin: 1em;
     border-radius: 25px;
     
+}
+
+.artist-name {
+    max-height: 30px;
 }
 
 .title {
