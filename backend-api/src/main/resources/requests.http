@@ -5,6 +5,18 @@ GET http://localhost:8080/albums
 ### Get Single Album
 GET http://localhost:8080/albums/1
 
+### Add Album
+POST http://localhost:8080/albums/addAlbum
+Content-Type: application/json
+
+{
+    "title": "Test Album",
+    "image": "/AlbumCovers/tyler_childers_-_purgatory.png",
+    "artist": "Tyler Childers",
+    "songs": [],
+    "comments": []
+}
+
 ### Add Song to Album
 POST http://localhost:8080/albums/1/addSong
 Content-Type: application/json
