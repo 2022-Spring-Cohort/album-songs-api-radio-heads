@@ -6,9 +6,102 @@ h1{
 }
 header {
     background-color:#F9912B ;
+    border: 2px solid green;
+    box-shadow: 5px 10px;
+    width: 85%;
 }
 
+.newAlbum-button{
+    background-color: rgba(0, 174, 255, 0.637);
+    font-family: 'Contrail One', cursive;
+    font-weight:normal
+}
+
+.addSongButton {
+    background-color: rgba(0, 174, 255, 0.637);
+    font-family: 'Contrail One', cursive;
+    font-weight:normal
+}
+
+.update-button{
+    background-color: rgba(0, 174, 255, 0.637);
+    margin: 5px;
+    box-shadow: 2px 2px;
+    font-family: 'Contrail One', cursive;
+    font-weight:normal
+}
+
+.delete-button{
+    background-color: rgba(0, 174, 255, 0.637);
+    margin: 5px;
+    box-shadow: 2px 2px;
+    font-family: 'Contrail One', cursive;
+    font-weight:normal
+    
+}
+.backButton {
+    background-color: rgba(0, 174, 255, 0.637);
+    margin: 10px;
+    font-family: 'Contrail One', cursive;
+    font-weight:normal
+}
+
+.header{
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  
+    
+}
+
+
+.albumArt {
+    width: 20vh;
+    border: 2px solid green;
+    padding: 5px;
+    margin: 20px;
+    background-color: pink;
+    box-shadow: 5px 10px;
+}
+
+.html{
+    background-image: 
+}
+
+.Albums {
+
    
+
+}
+
+.new-album {
+    margin-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* .albumArt{
     background-color: #F46161;
 } */
@@ -19,9 +112,9 @@ header {
 
 .thumbnail:hover {
     position:relative;
-    top:10px;
+    top: 5px;
     left:0px;
-    width:100px;
+    width:15vh;
     height:auto;
     display:block;
     z-index:999;

@@ -9,6 +9,10 @@
     margin-right: 15%;
    
 }
+
+.newAlbum-button{
+    margin-bottom: 15%;
+}
 .logo {  
 
 }
@@ -23,13 +27,15 @@ header {
     align-items: center;
     justify-content: space-evenly;
 }
+.Albums {
+    margin-top: 50px;
+}
 
 
 .albumArt {
     display: flex;
     flex-direction: column;
-    max-width: 200px;
-    justify-content: space-evenly;
+
     margin: 1em;
     border-radius: 25px;
     
