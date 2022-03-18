@@ -12,19 +12,23 @@ public class Album {
     private String image;
     private String artist;
 
-    @OneToMany(mappedBy = "album")
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
-    @OneToMany(mappedBy = "album")
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Comment>comments;
-
-    public Album() {
-    }
 
     public Album(String title, String image, String artist) {
         this.title = title;
         this.image = image;
         this.artist = artist;
+    }
+
+    public Album() {
+    }
+
+    public void updateArtist(String newArtist) {
+        artist = newArtist;
     }
 
     public Long getId() {

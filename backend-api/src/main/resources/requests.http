@@ -17,6 +17,10 @@ Content-Type: application/json
     "comments": []
 }
 
+### Delete Album
+DELETE http://localhost:8080/albums/1/deleteAlbum
+
+
 ### Add Song to Album
 POST http://localhost:8080/albums/1/addSong
 Content-Type: application/json
