@@ -1,6 +1,7 @@
 package org.wcci.apimastery.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity

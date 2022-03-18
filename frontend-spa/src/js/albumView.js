@@ -1,5 +1,7 @@
 export default function albumView(album) {
+  console.log(album)
   return `
+
     <main class="main-content">
         <section class="album-songs">
             
@@ -24,6 +26,7 @@ export default function albumView(album) {
               </button>
         </section>
     </main>`;
+
 }
 
 
