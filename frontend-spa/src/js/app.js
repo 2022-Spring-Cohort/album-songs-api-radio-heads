@@ -1,67 +1,94 @@
 import home from "./home.js";
 import header from "./header.js";
-import albumView from "./albumView.js"
+import albumView from "./albumView.js";
 
 const containerEl = document.querySelector(".container");
 
-
 function makeHomeView() {
-    fetch("http://localhost:8080/albums")
-    .then(res => res.json())
-    .then(albums => {
-        console.log(albums)
-        containerEl.innerHTML = header(albums);
-        containerEl.innerHTML += home(albums);
-        
-        const albumsEl = containerEl.querySelectorAll(".Albums");
+  fetch("http://localhost:8080/albums")
+    .then((res) => res.json())
+    .then((albums) => {
+      makeHomeViewFromJSON(albums);
+    });
+}
 
-            albumsEl.forEach(album => {
-                album.addEventListener("click", () => {
-                    let albumIdEl = album.querySelector(".id_field")
-                    makeAlbumView(albumIdEl.value);
-                })
+function makeHomeViewFromJSON(albums) {
+  console.log(albums);
+  containerEl.innerHTML = header(albums);
+  containerEl.innerHTML += home(albums);
+
+  const albumsEl = containerEl.querySelectorAll(".Albums");
+
+  albumsEl.forEach(album => {
+    let albumIdEl = album.querySelector(".id_field");
+    const albumThumbnail = album.querySelector(".thumbnail");
+    albumThumbnail.addEventListener("click", () => {
+      albums.forEach((albumJson) => {
+        if (albumJson.id == albumIdEl.value) {
+          makeAlbumView(albumJson);
+        }
+      });
+    });
+    const deleteButton = album.querySelector(".delete-button");
+    deleteButton.addEventListener("click", () => {
+      fetch("http://localhost:8080/albums/" + albumIdEl.value, {
+        method: 'DELETE'
+      })
+        .then(res => res.json())
+        .then(newAlbums => {
+          makeHomeViewFromJSON(newAlbums);
+        });
+    });
+    const updateButton = album.querySelector(".update-button");
+    updateButton.addEventListener("click", () => {
+        const updateInput = album.querySelector(".update-artist");
+        fetch("http://localhost:8080/albums/" + albumIdEl.value, {
+                method: 'PATCH',
+                body: updateInput.value
+            })
+            .then(res => res.json())
+            .then(newAlbums => {
+                makeHomeViewFromJSON(newAlbums);
             })
     })
+  });
 }
-function makeAlbumView(albumId) {
-    fetch("http://localhost:8080/albums/" + albumId)
-        .then(res => res.json())
-        .then(album => {
-            console.log(album);
-            containerEl.innerHTML = header();
-            containerEl.innerHTML += albumView(album);
 
-            const backButton = containerEl.querySelector(".back-navigation");
-            backButton.addEventListener("click", () => {
-                makeHomeView();
-            })
+function makeAlbumView(album) {
+  // fetch("http://localhost:8080/albums/" + albumId)
+  //     .then(res => res.json())
+  //     .then(album => {
+  console.log(album);
+  containerEl.innerHTML = header();
+  containerEl.innerHTML += albumView(album);
 
-            const songTitleInput = containerEl.querySelector(".songTitleInput");
-            const songLengthInput = containerEl.querySelector(".songLengthInput");
+  const backButton = containerEl.querySelector(".back-navigation");
+  backButton.addEventListener("click", () => {
+    makeHomeView();
+  });
 
+  const songTitleInput = containerEl.querySelector(".songTitleInput");
+  const songLengthInput = containerEl.querySelector(".songLengthInput");
 
-            const addSongBtn = containerEl.querySelector(".addSongButton");
-            addSongBtn.addEventListener("click", () => {
-                const newSongJson = 
+  const addSongBtn = containerEl.querySelector(".addSongButton");
+  addSongBtn.addEventListener("click", () => {
+    const newSongJson = {
+      title: songTitleInput.value,
+      songLength: songLengthInput.value,
+    };
 
-                {
-                    "title": songTitleInput.value,
-                    "songLength": songLengthInput.value,
-                }
-
-                fetch(`http://localhost:8080/albums/${albumId}/addSong`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(newSongJson)
-                  })
-                  .then(res => res.json())
-                  .then(album => {
-                      makeAlbumView(album.id);
-                  })
-            })
-        })
+    fetch(`http://localhost:8080/albums/${album.id}/addSong`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newSongJson),
+    })
+      .then((res) => res.json())
+      .then((album) => {
+        makeAlbumView(album);
+      });
+  });
 }
 
 makeHomeView();
