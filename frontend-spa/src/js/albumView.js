@@ -25,7 +25,7 @@ export default function albumView(album) {
               <a class="back-navigation">Back to Jukebox</a>
               </button>
         </section>
-    </main>`;
+    </main>`
 
 }
 
