@@ -19,7 +19,14 @@ export default function albumView(album) {
                   
                 <button class="addSongButton">Add Song</button>
             </div>
-            <a class="back-navigation">Back to Jukebox</a>
+            <button class ="backButton">
+              <a class="back-navigation">Back to Jukebox</a>
+              </button>
         </section>
     </main>`;
 }
+
+
+
+// new-album
+{/* <button class="newAlbum-button">Create New Album</button> */}
