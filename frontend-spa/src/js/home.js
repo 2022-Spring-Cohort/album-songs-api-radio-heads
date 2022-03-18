@@ -1,6 +1,6 @@
 export default function home(albums) {
     return `
-<div class="Albums">
+<section class="Albums">
 ${albums.map(album => {
     return `<div class="albumArt">
     <input type="hidden" class="id_field" value="${album.id}" >
@@ -13,8 +13,11 @@ ${albums.map(album => {
     </div>`
 }).join("")
 }    
+</section>
 
-
-</div>
+<section class="new-album">
+<input type="text" class="newAlbum-title" placeholder="Title">
+<input type="text" class="newAlbum-artist" placeholder="Artist">
+<button class="newAlbum-button">Create New Album</button>
 `
 }
