@@ -26,12 +26,12 @@ public class SongController {
         return songRepo.findById(id).get();
     }
 
-//    @PatchMapping("songs/{id}")
-//    public Iterable<Song> changeSongTitle(@PathVariable long id, @RequestBody String title) {
-//        Song song = songRepo.findById(id).get();
-//        song.updateTitle(title);
-//        songRepo.save(song);
-//        return songRepo.findAll();
-//    }
+    @PatchMapping("/songs/{id}")
+    public Album changeSongTitle(@PathVariable long id, @RequestBody String title) {
+        Song song = songRepo.findById(id).get();
+        song.updateTitle(title);
+        songRepo.save(song);
+        return albumRepo.findById(song.getAlbum().getId()).get();
+    }
 
 }

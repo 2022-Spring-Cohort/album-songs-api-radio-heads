@@ -125,20 +125,20 @@ function makeAlbumView(album) {
 
     const updateSongButton = containerEl.querySelector(".updateSong-button");
     updateSongButton.addEventListener("click", () => {
-        const updateSongInput = containerEl.querySelector(".update-song");
-        fetch("http://localhost:8080/albums/" + album.id + "/changeSongTitle", {
-            method: 'PATCH',
-            body: updateSongInput.value
-        })
-        .then(res => res.json())
-        .then((newSongs) => {
-            newSongs.forEach(newSong => {
-                if (newSong.id == song.id) {
-                    makeAlbumView(newSong);
-                }
-            })
+    let songContainerEl = event.target.parentElement
+    let songId = songContainerEl.querySelector(".song_id_field").value
+    
+    const updateSongInput = songContainerEl.querySelector(".update-song");
+    fetch("http://localhost:8080/songs/" + songId, {
+        method: 'PATCH',
+        body: updateSongInput.value
+    })
+    .then(res => res.json())
+    .then((album) => {
+                makeAlbumView(album);
             
         })
+        
     })
 
 }
