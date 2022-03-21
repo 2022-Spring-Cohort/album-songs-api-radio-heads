@@ -123,8 +123,9 @@ function makeAlbumView(album) {
         })
     })
 
-    const updateSongButton = containerEl.querySelector(".updateSong-button");
+    const updateSongButton = containerEl.querySelector(".updateSong-button")
     updateSongButton.addEventListener("click", () => {
+
     let songContainerEl = event.target.parentElement
     let songId = songContainerEl.querySelector(".song_id_field").value
     
@@ -137,9 +138,22 @@ function makeAlbumView(album) {
     .then((album) => {
                 makeAlbumView(album);
             
-        })
+    })
         
     })
+
+    const deleteSongButton = containerEl.querySelector(".delete-song-button");
+        deleteSongButton.addEventListener("click", () => {
+            let songContainerEl = event.target.parentElement
+            let songId = songContainerEl.querySelector(".song_id_field").value
+            fetch("http://localhost:8080/songs/" + songId, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(album => {
+                makeAlbumView(album);
+            })
+        })
 
 }
 
