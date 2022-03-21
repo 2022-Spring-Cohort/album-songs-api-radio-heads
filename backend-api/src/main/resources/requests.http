@@ -31,6 +31,10 @@ Content-Type: application/json
     "artist": "Tyler Childers"
 }
 
+### Change song name
+PATCH http:localhost:8080/songs/2/
+
+
 ### Add Comment to Album
 POST http://localhost:8080/albums/1/addComment
 Content-Type: application/json

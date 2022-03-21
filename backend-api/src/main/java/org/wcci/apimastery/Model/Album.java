@@ -28,8 +28,8 @@ public class Album {
     public Album() {
     }
 
-    public void updateArtist(String newArtist) {
-        artist = newArtist;
+    public void updateTitle(String newTitle) {
+        title = newTitle;
     }
 
     public Long getId() {

@@ -6,8 +6,7 @@ ${albums.map(album => {
     <input type="hidden" class="id_field" value="${album.id}" >
     <h2 class="artist-name">${album.artist}</h2>
     <img src="${album.image}" class="thumbnail">
-    <input type ="text" class="update-artist" placeholder="New Artist">
-    <button class="update-button">Update Artist</button>
+    
     <button class="delete-button">Delete</button>
     
     </div>`

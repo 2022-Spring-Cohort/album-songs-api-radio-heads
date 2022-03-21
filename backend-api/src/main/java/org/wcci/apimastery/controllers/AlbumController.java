@@ -60,11 +60,19 @@ public class AlbumController {
     }
 
     @PatchMapping("albums/{id}")
-    public Iterable<Album> changeArtist(@PathVariable long id, @RequestBody String artist) {
+    public Iterable<Album> changeTitle(@PathVariable long id, @RequestBody String title) {
         Album album = albumRepo.findById(id).get();
-        album.updateArtist(artist);
+        album.updateTitle(title);
         albumRepo.save(album);
         return albumRepo.findAll();
+    }
+
+    @PatchMapping("albums/{id}/changeSongTitle")
+    public Iterable<Song> changeSongTitle(@PathVariable long id, @RequestBody String title) {
+        Song song = songRepo.findById(id).get();
+        song.updateTitle(title);
+        songRepo.save(song);
+        return songRepo.findAll();
     }
 
 }

@@ -1,8 +1,7 @@
 package org.wcci.apimastery.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.wcci.apimastery.Model.Album;
 import org.wcci.apimastery.Model.Song;
 import org.wcci.apimastery.Repositories.AlbumRepository;
 import org.wcci.apimastery.Repositories.SongRepository;
@@ -26,5 +25,13 @@ public class SongController {
     public Song getSong(@PathVariable long id) {
         return songRepo.findById(id).get();
     }
+
+//    @PatchMapping("songs/{id}")
+//    public Iterable<Song> changeSongTitle(@PathVariable long id, @RequestBody String title) {
+//        Song song = songRepo.findById(id).get();
+//        song.updateTitle(title);
+//        songRepo.save(song);
+//        return songRepo.findAll();
+//    }
 
 }

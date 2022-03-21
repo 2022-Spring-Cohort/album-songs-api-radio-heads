@@ -40,19 +40,6 @@ function makeHomeViewFromJSON(albums) {
                 makeHomeViewFromJSON(newAlbums);
             })
         })
-
-        const updateButton = album.querySelector(".update-button");
-        updateButton.addEventListener("click", () => {
-            const updateInput = album.querySelector(".update-artist");
-            fetch("http://localhost:8080/albums/" + albumIdEl.value, {
-                method: 'PATCH',
-                body: updateInput.value
-            })
-            .then(res => res.json())
-            .then(newAlbums => {
-                makeHomeViewFromJSON(newAlbums);
-            })
-        })
     })
 
     const newTitle = containerEl.querySelector(".newAlbum-title")
@@ -117,6 +104,43 @@ function makeAlbumView(album) {
             makeAlbumView(album);
         })
     })
+
+    const updateButton = containerEl.querySelector(".update-button");
+    updateButton.addEventListener("click", () => {
+        const updateInput = containerEl.querySelector(".update-album");
+        fetch("http://localhost:8080/albums/" + album.id, {
+            method: 'PATCH',
+            body: updateInput.value
+        })
+        .then(res => res.json())
+        .then((newAlbums) => {
+            newAlbums.forEach(newAlbum => {
+                if (newAlbum.id == album.id) {
+                    makeAlbumView(newAlbum);
+                }
+            })
+            
+        })
+    })
+
+    const updateSongButton = containerEl.querySelector(".updateSong-button");
+    updateSongButton.addEventListener("click", () => {
+        const updateSongInput = containerEl.querySelector(".update-song");
+        fetch("http://localhost:8080/albums/" + album.id + "/changeSongTitle", {
+            method: 'PATCH',
+            body: updateSongInput.value
+        })
+        .then(res => res.json())
+        .then((newSongs) => {
+            newSongs.forEach(newSong => {
+                if (newSong.id == song.id) {
+                    makeAlbumView(newSong);
+                }
+            })
+            
+        })
+    })
+
 }
 
 makeHomeView();
