@@ -31,6 +31,10 @@ public class Song {
         this.album = album;
     }
 
+    public void updateTitle(String newTitle) {
+        title = newTitle;
+    }
+
     public Long getId() {
         return id;
     }
