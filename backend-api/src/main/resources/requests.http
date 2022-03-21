@@ -18,8 +18,10 @@ Content-Type: application/json
 }
 
 ### Delete Album
-DELETE http://localhost:8080/albums/1/deleteAlbum
+DELETE http://localhost:8080/albums/5/
 
+### Delete Song
+DELETE http://localhost:8080/songs/3/
 
 ### Add Song to Album
 POST http://localhost:8080/albums/1/addSong
