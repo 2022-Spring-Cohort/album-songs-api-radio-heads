@@ -32,8 +32,9 @@ Content-Type: application/json
 }
 
 ### Change song name
-PATCH http:localhost:8080/songs/2/
+PATCH http://localhost:8080/songs/2
 
+New Song Name
 
 ### Add Comment to Album
 POST http://localhost:8080/albums/1/addComment

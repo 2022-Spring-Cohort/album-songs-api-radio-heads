@@ -12,10 +12,12 @@ export default function albumView(album) {
         ${album.songs
           .map((song) => {
             return `<div class="songInfo">
+              <input type="hidden" class="song_id_field" value="${song.id}">
               <h2 class="song-title">${song.title}</h2>
               <h3 class="song-length">${song.songLength}</h3>
               <input type ="text" class="update-song" placeholder="New Song Title">
               <button class="updateSong-button">Update Song</button>
+              <button class="delete-song-button">Delete</button>
             </div>`;
           })
           .join("")}
