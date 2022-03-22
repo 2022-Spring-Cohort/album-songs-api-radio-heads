@@ -45,16 +45,7 @@ public class SongController {
         commentRepo.save(comment);
         return albumRepo.findById(song.getAlbum().getId()).get();
     }
-
-//    @PostMapping("/albums/{id}/addComment")
-//    public Album addCommentToAlbum(@PathVariable long id, @RequestBody Comment comment) {
-//        Album album = albumRepo.findById(id).get();
-//        comment.setAlbum(album);
-//        commentRepo.save(comment);
-//        return album;
-//    }
-
-
+    
     @DeleteMapping("/songs/{id}")
     public Album deleteSong(@PathVariable long id) {
         Song song = songRepo.findById(id).get();
