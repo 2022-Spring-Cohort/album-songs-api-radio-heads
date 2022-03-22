@@ -2,10 +2,7 @@ package org.wcci.apimastery.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
@@ -20,6 +17,9 @@ public class Song {
     @ManyToOne
     @JsonIgnore
     private Album album;
+
+    @OneToMany(mappedBy = "song", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Collection<Comment>comments;
 
     public Song() {
     }
@@ -57,5 +57,9 @@ public class Song {
 
     public void setAlbum(Album album) {
         this.album = album;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
     }
 }

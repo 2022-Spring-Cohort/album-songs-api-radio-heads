@@ -16,6 +16,10 @@ public class Comment {
     @JsonIgnore
     private Album album;
 
+    @ManyToOne
+    @JsonIgnore
+    private Song song;
+
     public Comment() {
     }
 
@@ -44,4 +48,10 @@ public class Comment {
     public void setAlbum(Album album) {
         this.album = album;
     }
+
+    public Song getSong() {
+        return song;
+    }
+
+    public void setSong(Song song) {this.song = song;}
 }
