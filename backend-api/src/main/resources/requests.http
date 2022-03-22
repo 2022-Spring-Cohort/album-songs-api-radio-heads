@@ -47,5 +47,14 @@ Content-Type: application/json
         "review": "Album comment goes brrr..."
     }
 
+### Add Comment to Song
+POST http://localhost:8080/songs/3/addComment
+Content-Type: application/json
+
+    {
+        "author": "Aweys",
+        "review": "This is a different comment."
+    }
+
 ### Get Comments
 GET http://localhost:8080/comments
