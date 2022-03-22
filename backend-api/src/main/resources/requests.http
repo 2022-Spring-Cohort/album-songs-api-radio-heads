@@ -44,7 +44,8 @@ Content-Type: application/json
 
     {
         "author": "Kev",
-        "review": "Album comment goes brrr..."
+        "review": "Album comment goes brrr...",
+        "rating": "70"
     }
 
 ### Add Comment to Song

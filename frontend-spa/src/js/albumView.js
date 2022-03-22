@@ -5,6 +5,9 @@ export default function albumView(album) {
   <main class="main-content">
     <section class="album-info">
       <h2>${album.title} - ${album.artist}</h2>
+      <h2>Rated:${album.rating}/5</h2>
+      <input type ="text" class="update-rating" placeholder="Enter rating 1-5">
+      <button class="rating-button">Update Rating</button>
       <input type ="text" class="update-album" placeholder="New Album Title">
       <button class="update-button">Update Album</button>
     <section class="album-songs">

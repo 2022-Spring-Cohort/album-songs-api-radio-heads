@@ -13,6 +13,8 @@ public class Album {
     private String image;
     private String artist;
 
+    private int rating;
+
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
@@ -23,6 +25,7 @@ public class Album {
         this.title = title;
         this.image = image;
         this.artist = artist;
+        this.rating = 3;
     }
 
     public Album() {
@@ -30,6 +33,15 @@ public class Album {
 
     public void updateTitle(String newTitle) {
         title = newTitle;
+    }
+
+    public void updateRating() {
+        int sum = 0;
+        for (Comment comment: comments) {
+            sum += comment.getRating();
+        }
+        rating = Math.round(sum/comments.size());
+
     }
 
     public Long getId() {
@@ -55,5 +67,11 @@ public class Album {
     public Collection<Comment> getComments() {
         return comments;
     }
+
+    public int getRating() {
+//        updateRating();
+        return rating;
+    }
+
 }
 

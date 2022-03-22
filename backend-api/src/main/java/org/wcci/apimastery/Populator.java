@@ -29,8 +29,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song1);
         Song song2 = new Song("Lady May", "3:03", "Tyler Childers", album1);
         songRepo.save(song2);
-        Comment comment1 = new Comment("Joe", "This album slaps.", album1);
+        Comment comment1 = new Comment("Joe", "This album slaps.", album1, 4);
         commentRepo.save(comment1);
+//        album1.updateRating();
+//        albumRepo.save(album1);
         
 
         Album album2 = new Album("A Fever You Can't Sweat Out", "/AlbumCovers/A_Fever_you_cant_sweat_out.jpg", "P!ATD");
@@ -39,8 +41,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song3);
         Song song4 = new Song("Build God, Then We'll Talk", "3:40", "P!ATD", album2);
         songRepo.save(song4);
-        Comment comment2 = new Comment("Dylan","Those emo days", album2);
+        Comment comment2 = new Comment("Dylan","Those emo days", album2, 4);
         commentRepo.save(comment2);
+//        album2.updateRating();
+//        albumRepo.save(album2);
 
         
         Album album3 = new Album("A Beautiful Lie", "/AlbumCovers/a_beautiful_lie.jpg", "30 Seconds To Mars");
@@ -49,8 +53,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song5);
         Song song6 = new Song("From Yesterday", "4:07", "Thirty Seconds To Mars", album3);
         songRepo.save(song6);
-        Comment comment3 = new Comment("Dylan","Those emo days", album3);
+        Comment comment3 = new Comment("Dylan","Those emo days", album3, 3);
         commentRepo.save(comment3);
+//        album3.updateRating();
+//        albumRepo.save(album3);
 
 
         Album album4 = new Album("Artificial Selection", "/AlbumCovers/ArtificialSelectionAlbumCover.jpg", "Dance Gavin Dance");
@@ -59,8 +65,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song7);
         Song song8 = new Song("Evaporate", "4:57", "Dance Gavin Dance", album4);
         songRepo.save(song8);
-        Comment comment4 = new Comment("Dylan","Those emo days", album4);
+        Comment comment4 = new Comment("Dylan","Those emo days", album4, 4);
         commentRepo.save(comment4);
+//        album4.updateRating();
+//        albumRepo.save(album4);
 
         Album album5 = new Album("Audioslave", "/AlbumCovers/Audioslave.jpg", "Audioslave");
         albumRepo.save(album5);
@@ -68,8 +76,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song9);
         Song song10 = new Song("Show Me How To Live", "4:37", "Audioslave", album5);
         songRepo.save(song10);
-        Comment comment5 = new Comment("Dylan","Those emo days", album5);
+        Comment comment5 = new Comment("Dylan","Those emo days", album5, 5);
         commentRepo.save(comment5);
+//        album5.updateRating();
+//        albumRepo.save(album5);
 
         Album album6 = new Album("Good Kid Mad city", "/AlbumCovers/good_kid_mad_city.jpg", "Kendrick Lamar");
         albumRepo.save(album6);
@@ -77,8 +87,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song11);
         Song song12 = new Song("Money Trees", "6:26", "Kendrick Lamar, Jay Rock", album6);
         songRepo.save(song12);
-        Comment comment6 = new Comment("Joe","This album slaps", album6);
+        Comment comment6 = new Comment("Joe","This album slaps", album6, 5);
         commentRepo.save(comment6);
+//        album6.updateRating();
+//        albumRepo.save(album6);
 
         Album album7 = new Album("In The Aeroplane Over The Sea", "/AlbumCovers/in_the_aeroplane_over_the_sea.jpg", "Neutral Milk Hotel");
         albumRepo.save(album7);
@@ -86,8 +98,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song13);
         Song song14 = new Song("Two-headed Boy", "4:26", "Neutral Milk Hotel", album7);
         songRepo.save(song14);
-        Comment comment7 = new Comment("Joe","This album slaps", album7);
+        Comment comment7 = new Comment("Joe","This album slaps", album7, 4);
         commentRepo.save(comment7);
+//        album7.updateRating();
+//        albumRepo.save(album7);
 
         Album album8 = new Album("Long.Live.ASAP", "/AlbumCovers/long-live-asap.jpg", "A$AP Rocky");
         albumRepo.save(album8);
@@ -95,8 +109,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song15);
         Song song16 = new Song("One Train", "6:12", "A$AP Rocky", album8);
         songRepo.save(song16);
-        Comment comment8 = new Comment("Aweys","Its a great song.", album7);
+        Comment comment8 = new Comment("Aweys","Its a great song.", album7, 5);
         commentRepo.save(comment8);
+//        album8.updateRating();
+//        albumRepo.save(album8);
 
         Album album9 = new Album("Life Of Pablo", "/AlbumCovers/the_life_of_pablo_alternate.jpg", "Ye");
         albumRepo.save(album9);
@@ -104,8 +120,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song17);
         Song song18 = new Song("Real Friends", "4:12", "Ye", album9);
         songRepo.save(song18);
-        Comment comment9 = new Comment("Aweys","Its a great song.", album9);
+        Comment comment9 = new Comment("Aweys","Its a great song.", album9, 4);
         commentRepo.save(comment9);
+//        album9.updateRating();
+//        albumRepo.save(album9);
 
         Album album10 = new Album("This Place Will Become Your Tomb", "/AlbumCovers/This_place_will_beome_your_tomb.jpg", "Sleep Token");
         albumRepo.save(album10);
@@ -113,8 +131,10 @@ public class Populator implements CommandLineRunner {
         songRepo.save(song19);
         Song song20 = new Song("Akaline", "3:34", "Sleep Token", album10);
         songRepo.save(song20);
-        Comment comment10 = new Comment("Dylan","Those emo days", album5);
+        Comment comment10 = new Comment("Dylan","Those emo days", album5, 4);
         commentRepo.save(comment10);
+//        album10.updateRating();
+//        albumRepo.save(album10);
 
 
 

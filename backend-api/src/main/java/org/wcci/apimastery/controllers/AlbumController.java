@@ -34,7 +34,9 @@ public class AlbumController {
 
     @GetMapping("/albums/{id}")
     public Album getAlbum(@PathVariable long id) {
-        return albumRepo.findById(id).get();
+        Album album = albumRepo.findById(id).get();
+        album.updateRating();
+        return album;
     }
 
     @PostMapping("/albums/{id}/addSong")
@@ -50,8 +52,16 @@ public class AlbumController {
         Album album = albumRepo.findById(id).get();
         comment.setAlbum(album);
         commentRepo.save(comment);
+        album.updateRating();
+        albumRepo.save(album);
         return album;
     }
+
+//    @PostMapping("/albums/{id}/addRating")
+//    public Album addRatingToAlbum(@PathVariable long id, @RequestBody int rating) {
+//        Album album = albumRepo.findById(id).get();
+//        album.comm
+//    }
 
     @DeleteMapping("/albums/{id}")
     public Iterable<Album> deleteAlbum(@PathVariable long id) {

@@ -11,6 +11,7 @@ public class Comment {
     private Long id;
     private String author;
     private String review;
+    private int rating;
 
     @ManyToOne
     @JsonIgnore
@@ -23,10 +24,11 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(String author, String review, Album album) {
+    public Comment(String author, String review, Album album, int rating) {
         this.author = author;
         this.review = review;
         this.album = album;
+        this.rating = rating;
     }
 
     public Long getId() {
@@ -54,4 +56,12 @@ public class Comment {
     }
 
     public void setSong(Song song) {this.song = song;}
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 }
