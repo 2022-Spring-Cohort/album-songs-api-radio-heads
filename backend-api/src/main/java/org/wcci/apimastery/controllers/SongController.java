@@ -5,19 +5,17 @@ import org.wcci.apimastery.Model.Album;
 import org.wcci.apimastery.Model.Comment;
 import org.wcci.apimastery.Model.Song;
 import org.wcci.apimastery.Repositories.AlbumRepository;
-import org.wcci.apimastery.Repositories.CommentRepository;
 import org.wcci.apimastery.Repositories.SongRepository;
 
 @RestController
 public class SongController {
     private AlbumRepository albumRepo;
     private SongRepository songRepo;
-    private CommentRepository commentRepo;
 
-    public SongController(AlbumRepository albumRepo, SongRepository songRepo, CommentRepository commentRepo) {
+
+    public SongController(AlbumRepository albumRepo, SongRepository songRepo) {
         this.albumRepo = albumRepo;
         this.songRepo = songRepo;
-        this.commentRepo = commentRepo;
     }
 
     @GetMapping("/songs")
@@ -41,8 +39,8 @@ public class SongController {
     @PostMapping("/songs/{id}/addComment")
     public Album addCommentToSong(@PathVariable long id, @RequestBody Comment comment) {
         Song song = songRepo.findById(id).get();
-        comment.setSong(song);
-        commentRepo.save(comment);
+        song.addComment(comment);
+        songRepo.save(song);
         return albumRepo.findById(song.getAlbum().getId()).get();
     }
     

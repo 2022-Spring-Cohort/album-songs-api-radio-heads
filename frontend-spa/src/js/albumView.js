@@ -5,9 +5,7 @@ export default function albumView(album) {
   <main class="main-content">
     <section class="album-info">
       <h2>${album.title} - ${album.artist}</h2>
-      <h2>Rated:${album.rating}/5</h2>
-      <input type ="text" class="update-rating" placeholder="Enter rating 1-5">
-      <button class="rating-button">Update Rating</button>
+      <h2>Rated:${album.rating}/10</h2>
       <input type ="text" class="update-album" placeholder="New Album Title">
       <button class="update-button">Update Album</button>
     <section class="album-songs">
@@ -57,6 +55,7 @@ export default function albumView(album) {
             return `<div class="albumComment">
             <h3>${comment.review}</h3>
             <h3>${comment.author}</h3>
+            <h3>${comment.rating}</h3>
             </div>`
           })
           .join("")}
@@ -64,6 +63,7 @@ export default function albumView(album) {
 
           <textarea class="albumCommentInput" name="album-comment" rows="2" cols="50" placeholder="Leave comment on album:"></textarea>
           <input type="text" class="albumCommentAuthor" placeholder="Author's name:">
+          <input type ="text" class="albumCommentRating" placeholder="Enter rating 1-10">
           <button class="albumCommentButton">Add Comment</button>
 
 

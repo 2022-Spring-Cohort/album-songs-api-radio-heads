@@ -3,6 +3,7 @@ package org.wcci.apimastery.Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -18,21 +19,26 @@ public class Song {
     @JsonIgnore
     private Album album;
 
-    @OneToMany(mappedBy = "song", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ElementCollection
     private Collection<Comment>comments;
 
     public Song() {
     }
 
-    public Song(String title, String songLength, String artist, Album album) {
+    public Song(String title, String songLength, String artist, Album album, Comment...comments) {
         this.title = title;
         this.songLength = songLength;
         this.artist = artist;
         this.album = album;
+        this.comments = Arrays.asList(comments);
     }
 
     public void updateTitle(String newTitle) {
         title = newTitle;
+    }
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
     }
 
     public Long getId() {

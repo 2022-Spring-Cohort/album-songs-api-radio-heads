@@ -2,6 +2,7 @@ package org.wcci.apimastery.Model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -18,14 +19,15 @@ public class Album {
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
-    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ElementCollection
     private Collection<Comment>comments;
 
-    public Album(String title, String image, String artist) {
+    public Album(String title, String image, String artist, Comment...comments) {
         this.title = title;
         this.image = image;
         this.artist = artist;
-        this.rating = 3;
+        this.rating = rating;
+        this.comments = Arrays.asList(comments);
     }
 
     public Album() {
@@ -35,13 +37,18 @@ public class Album {
         title = newTitle;
     }
 
-    public void updateRating() {
-        int sum = 0;
-        for (Comment comment: comments) {
-            sum += comment.getRating();
-        }
-        rating = Math.round(sum/comments.size());
+    public void addComment(Comment comment) {
+        comments.add(comment);
+    }
 
+    public void updateRating() {
+        if (comments.size() > 0) {
+            int sum = 0;
+            for (Comment comment : comments) {
+                sum += comment.getRating();
+            }
+            rating = sum / comments.size();
+        }
     }
 
     public Long getId() {
@@ -69,7 +76,6 @@ public class Album {
     }
 
     public int getRating() {
-//        updateRating();
         return rating;
     }
 
