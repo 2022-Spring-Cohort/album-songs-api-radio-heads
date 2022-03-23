@@ -16,6 +16,9 @@
 .logo {  
 
 }
+html {
+    font-family: 'Contrail One', cursive;
+}
 
 header { 
     display: flex;
@@ -47,8 +50,10 @@ header {
     max-height: 30px;
 }
 
-.title {
-    
+.commentFunction {
+    display:flex;
+    flex-direction: column;
+
 }
 /* body {
     background: url("../../AlbumCovers/largewoodgrain.jpg")no-repeat center center fixed;
@@ -57,8 +62,424 @@ header {
     -o-background-size: cover;
     background-size: cover;
    } */
+  .album-info {
+      display: flex
+
+  }
+  
+  .albumViewArt {
+      height: 50vh;
+      position: relative;
+      background-color:#F9912B ;
+    border: 2px solid rgb(233, 243, 233);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+        border-radius: 95px;
+     
+  }
+  .song-name-pic{
+    margin-right: 15vh;
+  }
+
+  .song_Info {
+      padding: auto;
+      margin: 5vh;
+  }
+  .album-songs {
+    padding: auto;
+    margin: 5vh;
+  }
+
+ 
+  /* CSS */
+  .updateSong-button {
+    background-color: #3DD1E7;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: 'Contrail One', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.25rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: space-evenly;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: 200px;
+    height: 50px;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-items: flex-end;
 
     
+  }
+  
+  .updateSong-button:focus {
+    outline: 0;
+  }
+  
+  .updateSong-button:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+  }
+  
+  .updateSong-button:hover:after {
+    bottom: 2px;
+    left: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .updateSong-button {
+      padding: .75rem 3rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  .delete-song-button {
+    background-color: #e7150e;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: 'Contrail One', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.25rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: space-evenly;
+    text-decoration: none #000000 solid;
+    width: 200px;
+    height: 50px;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-items: flex-end;
+    
+    
+  }
+  
+  .delete-song-button:focus {
+    outline: 0;
+  }
+  
+  .delete-song-button:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+  }
+  
+  .delete-song-button:hover:after {
+    bottom: 2px;
+    left: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .delete-song-button {
+      padding: .75rem 3rem;
+      font-size: 1.25rem;
+    }
+  }
+  .update-button {
+    background-color: #3DD1E7;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.25rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: space-evenly;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: 200px;
+    height: 50px;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-items: flex-end;
+    
+    
+  }
+  
+  .update-button:focus {
+    outline: 0;
+  }
+  
+  .update-button:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+  }
+  
+  .update-button:hover:after {
+    bottom: 2px;
+    left: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .update-button {
+      padding: .75rem 3rem;
+      font-size: 1.25rem;
+    }
+  }
+  .addSongButton {
+    background-color: #3DD1E7;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: 'Contrail One', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.25rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: space-evenly;
+    text-decoration: none #000000 solid;
+    width: 200px;
+    height: 50px;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-items: flex-end;
+    
+    
+  }
+  
+  .addSongButton:focus {
+    outline: 0;
+  }
+  
+  .addSongButton:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+  }
+  
+  .addSongButton:hover:after {
+    bottom: 2px;
+    left: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .addSongButton {
+      padding: .75rem 3rem;
+      font-size: 1.25rem;
+    }
+  }
+  .addSongButton {
+    background-color: #3DD1E7;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: 'Contrail One', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.25rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: space-evenly;
+    text-decoration: none #000000 solid;
+    width: 200px;
+    height: 50px;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-items: flex-end;
+    margin-top: 1rem;
+    
+    
+  }
+  
+  .addSongButton:focus {
+    outline: 0;
+  }
+  
+  .addSongButton:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+  }
+  
+  .addSongButton:hover:after {
+    bottom: 2px;
+    left: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .addSongButton {
+      padding: .75rem 3rem;
+      font-size: 1.25rem;
+    }
+  }
+
+
+.albumCommentButton {
+  background-color: #3DD1E7;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: 'Contrail One', cursive;
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.25rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: space-evenly;
+  text-decoration: none #000000 solid;
+  width: 200px;
+  height: 50px;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  align-items: flex-end;
+  margin-top: 1rem;
+
+  
+  
+}
+
+.albumCommentButton:focus {
+  outline: 0;
+}
+
+.albumCommentButton:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.albumCommentButton:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .albumCommentButton {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+.songCommentButton {
+    background-color: #3DD1E7;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: 'Contrail One', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.25rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: space-evenly;
+    text-decoration: none #000000 solid;
+    width: 200px;
+    height: 50px;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-items: flex-end;
+    margin-top: 1rem;
+    
+   
+    
+  }
+  
+  .songCommentButton:focus {
+    outline: 0;
+  }
+  
+  .songCommentButton:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+  }
+  
+  .songCommentButton:hover:after {
+    bottom: 2px;
+    left: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .songCommentButton {
+      padding: .75rem 3rem;
+      font-size: 1.25rem;
+    }
+  }
+ 
 
 
    
