@@ -90,6 +90,8 @@ function makeAlbumView(album) {
         const newSongJson = {
             title: songTitleInput.value,
             songLength: songLengthInput.value,
+            artist: album.artist,
+            comments: []
         }
 
         fetch(`http://localhost:8080/albums/${album.id}/addSong`, {
@@ -101,6 +103,7 @@ function makeAlbumView(album) {
         })
         .then((res) => res.json())
         .then((album) => {
+            console.log(album);
             makeAlbumView(album);
         })
     })
@@ -126,11 +129,13 @@ function makeAlbumView(album) {
     const albumCommentButton = containerEl.querySelector(".albumCommentButton")
     const albumCommentInput = containerEl.querySelector(".albumCommentInput")
     const albumCommentAuthor = containerEl.querySelector(".albumCommentAuthor")
+    const albumCommentRating = containerEl.querySelector(".albumCommentRating")
     albumCommentButton.addEventListener("click", () => {
        const newCommentJson = {
         
         author: albumCommentAuthor.value,
-        review: albumCommentInput.value
+        review: albumCommentInput.value,
+        rating: albumCommentRating.value
     }
 
         fetch(`http://localhost:8080/albums/${album.id}/addComment`, {

@@ -5,7 +5,6 @@ import org.wcci.apimastery.Model.Album;
 import org.wcci.apimastery.Model.Comment;
 import org.wcci.apimastery.Model.Song;
 import org.wcci.apimastery.Repositories.AlbumRepository;
-import org.wcci.apimastery.Repositories.CommentRepository;
 import org.wcci.apimastery.Repositories.SongRepository;
 
 @RestController
@@ -13,12 +12,10 @@ public class AlbumController {
 
     private AlbumRepository albumRepo;
     private SongRepository songRepo;
-    private CommentRepository commentRepo;
 
-    public AlbumController(AlbumRepository albumRepo, SongRepository songRepo, CommentRepository commentRepo) {
+    public AlbumController(AlbumRepository albumRepo, SongRepository songRepo) {
         this.albumRepo = albumRepo;
         this.songRepo = songRepo;
-        this.commentRepo = commentRepo;
     }
 
     @GetMapping("/albums")
@@ -34,7 +31,10 @@ public class AlbumController {
 
     @GetMapping("/albums/{id}")
     public Album getAlbum(@PathVariable long id) {
-        return albumRepo.findById(id).get();
+        Album album = albumRepo.findById(id).get();
+        album.updateRating();
+        albumRepo.save(album);
+        return album;
     }
 
     @PostMapping("/albums/{id}/addSong")
@@ -42,16 +42,23 @@ public class AlbumController {
         Album album = albumRepo.findById(id).get();
         song.setAlbum(album);
         songRepo.save(song);
-        return album;
+        return albumRepo.findById(id).get();
     }
 
     @PostMapping("/albums/{id}/addComment")
     public Album addCommentToAlbum(@PathVariable long id, @RequestBody Comment comment) {
         Album album = albumRepo.findById(id).get();
-        comment.setAlbum(album);
-        commentRepo.save(comment);
+        album.addComment(comment);
+        album.updateRating();
+        albumRepo.save(album);
         return album;
     }
+
+//    @PostMapping("/albums/{id}/addRating")
+//    public Album addRatingToAlbum(@PathVariable long id, @RequestBody int rating) {
+//        Album album = albumRepo.findById(id).get();
+//        album.comm
+//    }
 
     @DeleteMapping("/albums/{id}")
     public Iterable<Album> deleteAlbum(@PathVariable long id) {

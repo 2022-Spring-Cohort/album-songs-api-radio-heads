@@ -4,33 +4,23 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
-@Entity
+@Embeddable
 public class Comment {
-    @Id
-    @GeneratedValue
-    private Long id;
+
+
     private String author;
     private String review;
+    private int rating;
 
-    @ManyToOne
-    @JsonIgnore
-    private Album album;
 
-    @ManyToOne
-    @JsonIgnore
-    private Song song;
 
     public Comment() {
     }
 
-    public Comment(String author, String review, Album album) {
+    public Comment(String author, String review, int rating) {
         this.author = author;
         this.review = review;
-        this.album = album;
-    }
-
-    public Long getId() {
-        return id;
+        this.rating = rating;
     }
 
     public String getAuthor() {
@@ -41,17 +31,12 @@ public class Comment {
         return review;
     }
 
-    public Album getAlbum() {
-        return album;
+
+    public int getRating() {
+        return rating;
     }
 
-    public void setAlbum(Album album) {
-        this.album = album;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
-
-    public Song getSong() {
-        return song;
-    }
-
-    public void setSong(Song song) {this.song = song;}
 }
