@@ -1,3 +1,13 @@
+.logo {
+  width: 175px;
+  height: 175px;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+}
+
 .Albums {
     display: flex;
     flex-direction: row;
@@ -25,8 +35,8 @@ header {
     flex-direction: row;
     border-radius: 25px;
     padding: 10px;
-    margin-top: 25px;
-    height: 200px;
+    /* margin-top: 25px; */
+    /* height: 200px; */
     align-items: center;
     justify-content: space-evenly;
 }
@@ -71,7 +81,7 @@ header {
       height: 50vh;
       position: relative;
       background-color:#F9912B ;
-    border: 2px solid rgb(233, 243, 233);
+    border: 2px solid black;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
         border-radius: 95px;
      
@@ -182,7 +192,8 @@ header {
     -webkit-user-select: none;
     touch-action: manipulation;
     align-items: flex-end;
-    margin-top: 1rem;
+    margin-top: 10vh;
+    margin-left: 10vh;
 
     
   }
@@ -564,6 +575,8 @@ header {
 
 .newSongDiv {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
 }
     
 .rightSide {
@@ -571,4 +584,14 @@ header {
   margin-right: 5vh;
 }
     
+.songLengthInput {
+  margin-top: 1rem;
+}
 
+input {
+  width: 50%;
+}
+
+.newAlbum-artist {
+  margin-top: .5rem;
+}

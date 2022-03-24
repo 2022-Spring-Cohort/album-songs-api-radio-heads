@@ -66,9 +66,9 @@ export default function albumView(album) {
           ${album.comments
           .map((comment) => {
             return `<div class="albumComment">
-            <h3>${comment.review}</h3>
+            <h3>"${comment.review}"</h3>
             <h3>${comment.author}</h3>
-            <h3>${comment.rating}</h3>
+            <h3>Rating: ${comment.rating}</h3>
             </div>`
           })
           .join("")}
