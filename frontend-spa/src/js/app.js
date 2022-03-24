@@ -77,7 +77,7 @@ function makeAlbumView(album) {
     containerEl.innerHTML = header();
     containerEl.innerHTML += albumView(album);
 
-    const backButton = containerEl.querySelector(".back-navigation");
+    const backButton = containerEl.querySelector(".backButton");
     backButton.addEventListener("click", () => {
         makeHomeView();
     })

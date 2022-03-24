@@ -6,7 +6,7 @@ h1{
 }
 header {
     background-color:#F9912B ;
-    border: 2px solid green;
+    border: 2px solid black;
     box-shadow: 5px 10px;
     width: 85%;
 }
@@ -39,12 +39,12 @@ header {
     font-weight:normal
     
 }
-.backButton {
+/* .backButton {
     background-color: rgba(0, 174, 255, 0.637);
     margin: 10px;
     font-family: 'Contrail One', cursive;
     font-weight:normal
-}
+} */
 
 .header{
 
@@ -62,7 +62,7 @@ header {
 
 .albumArt {
     width: 20vh;
-    border: 2px solid green;
+    border: 2px solid black;
     padding: 5px;
     margin: 20px;
     background-color: pink;
