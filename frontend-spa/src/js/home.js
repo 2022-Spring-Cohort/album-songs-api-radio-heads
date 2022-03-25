@@ -2,9 +2,7 @@ export default function home(albums) {
     return `
 <section class="Albums">
 ${albums.map(album => {
-    return `<div class="leftImg">
-
-    </div>
+    return `
     
     <div class="albumArt">
     <input type="hidden" class="id_field" value="${album.id}" >
