@@ -57,7 +57,7 @@ header {
 }
 
 .artist-name {
-    max-height: 30px;
+    height: 100%;
 }
 
 .commentFunction {
