@@ -23,7 +23,7 @@ export default function albumView(album) {
               .map((song) => {
                 return `<div class="songInfo">
                   <input type="hidden" class="song_id_field" value="${song.id}">
-                  <h2 class="song-title">${song.title} - ${song.songLength}</h2>
+                  <h2 class="song-title">${song.title}  -  ${song.songLength}</h2>
                 
                   
                   <div class="songComment-list">
@@ -66,9 +66,9 @@ export default function albumView(album) {
           ${album.comments
           .map((comment) => {
             return `<div class="albumComment">
-            <h3>${comment.review}</h3>
+            <h3>"${comment.review}"</h3>
             <h3>${comment.author}</h3>
-            <h3>${comment.rating}</h3>
+            <h3>Rating: ${comment.rating}</h3>
             </div>`
           })
           .join("")}
